@@ -1,22 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthComponent : MonoBehaviour
-{
+public class HealthComponent : MonoBehaviour {
     [field: SerializeField] public int MaxHealth { get; private set; }
     [field: SerializeField] public int CurrHealth { get; private set; }
 
-    [SerializeField] public UnityEvent<int> HealthChanged;
+    public UnityEvent<int> HealthChanged;
 
-    void Awake()
-    {
-        CurrHealth = MaxHealth;
-    }
+    private void Awake() => CurrHealth = MaxHealth;
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         CurrHealth -= damage;
         HealthChanged?.Invoke(CurrHealth);
     }

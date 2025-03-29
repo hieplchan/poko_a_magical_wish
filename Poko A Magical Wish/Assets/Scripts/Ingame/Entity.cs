@@ -1,39 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using KBCore.Refs;
 using UnityEngine;
 
-public abstract class Entity : MonoBehaviour
-{
-    public enum EntityTag : int
-    {
+public abstract class Entity : MonoBehaviour {
+    public enum EntityTag : int {
         NONE = 0,
         PLAYER = 1,
         ENEMY = 2
     }
 
-    [field: SerializeField] public EntityTag Tag { get; private set; }
+    [SerializeField] public EntityTag Tag;
     [SerializeField, Child] public Rigidbody RbComp;
-    [SerializeField, Self] public HealthComponent HealthComp = null;
+    [SerializeField, Self] public HealthComponent HealthComp;
 
-    void OnValidate()
-    {
+    private void OnValidate() {
         var currComp = gameObject.GetComponent<HealthComponent>();
-        if (this is IDamageable)
-        {
-            if (!currComp) 
-            {
+        if (this is IDamageable) {
+            if (!currComp) {
                 HealthComp = gameObject.AddComponent<HealthComponent>();
-            }
-            else 
-            {
+            } else {
                 HealthComp = currComp;
             }
-        }
-        else
-        {
-            if (currComp)
-            {
+        } else {
+            if (currComp) {
                 DestroyImmediate(HealthComp);
             }
             HealthComp = null;
