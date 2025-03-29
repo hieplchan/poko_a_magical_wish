@@ -3,15 +3,42 @@ using System.Collections.Generic;
 using KBCore.Refs;
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour
 {
-    [SerializeField, Child] public Rigidbody Rigidbody;
-    [SerializeField, Self] public HealthComp HealthComp;
+    public enum EntityTag : int
+    {
+        NONE = 0,
+        PLAYER = 1,
+        ENEMY = 2
+    }
 
-#if UNITY_EDITOR
+    [field: SerializeField] public EntityTag Tag { get; private set; }
+    [SerializeField, Child] public Rigidbody RbComp;
+    [SerializeField, Self] public HealthComponent HealthComp = null;
+
     void OnValidate()
     {
+        var currComp = gameObject.GetComponent<HealthComponent>();
+        if (this is IDamageable)
+        {
+            if (!currComp) 
+            {
+                HealthComp = gameObject.AddComponent<HealthComponent>();
+            }
+            else 
+            {
+                HealthComp = currComp;
+            }
+        }
+        else
+        {
+            if (currComp)
+            {
+                DestroyImmediate(HealthComp);
+            }
+            HealthComp = null;
+        }
+
         this.ValidateRefs();
     }
-#endif
 }

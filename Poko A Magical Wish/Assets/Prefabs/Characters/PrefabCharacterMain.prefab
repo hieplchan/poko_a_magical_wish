@@ -50,9 +50,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163b8114b7d179e47a04fa04e4fcbeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody: {fileID: 4343450052318891882}
+  <Tag>k__BackingField: 1
+  RbComp: {fileID: 4343450052318891882}
   HealthComp: {fileID: 325500133647266585}
-  Controller: {fileID: 2413603743310484460}
+  ControllerComp: {fileID: 2413603743310484460}
 --- !u!114 &2413603743310484460
 MonoBehaviour:
   m_ObjectHideFlags: 0
