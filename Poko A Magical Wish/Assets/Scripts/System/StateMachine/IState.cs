@@ -1,6 +1,6 @@
 public interface IState {
     public void OnEnter();
-    public void OnUpdate();
-    public void OnFixedUpdate();
+    public void Update();
+    public void FixedUpdate();
     public void OnExit();
 }

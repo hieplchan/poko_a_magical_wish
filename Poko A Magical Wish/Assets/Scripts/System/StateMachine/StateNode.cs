@@ -9,7 +9,7 @@ public class StateNode {
         Transitions = new HashSet<Transition>();
     }
 
-    public void AddTransition(Transition transition) {
-        Transitions.Add(transition);
+    public void AddTransition(IState to, IPredicate condition) {
+        Transitions.Add(new Transition(to, condition));
     }
 }

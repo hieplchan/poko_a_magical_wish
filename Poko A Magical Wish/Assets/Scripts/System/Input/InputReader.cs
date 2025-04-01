@@ -27,6 +27,11 @@ public class InputReader : ScriptableObject, PlayerInputActions.IPlayerActions {
         _inputActions.Enable();
     }
 
+    private void OnDestroy() {
+        _inputActions.Disable();
+        _inputActions.Player.SetCallbacks(null);
+    }
+
     public void OnMove(InputAction.CallbackContext context)
         => Move.Invoke(context.ReadValue<Vector2>());
 

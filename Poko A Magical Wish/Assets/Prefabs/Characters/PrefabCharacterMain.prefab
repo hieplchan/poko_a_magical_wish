@@ -53,6 +53,7 @@ MonoBehaviour:
   Tag: 1
   RbComp: {fileID: 4343450052318891882}
   HealthComp: {fileID: 325500133647266585}
+  rbComp: {fileID: 4343450052318891882}
   ControllerComp: {fileID: 2413603743310484460}
 --- !u!114 &2413603743310484460
 MonoBehaviour:
@@ -66,7 +67,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4600647eb8c324da1d66fece553742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 4255967443274292344}
+  player: {fileID: 4255967443274292344}
+  input: {fileID: 11400000, guid: 26f9208ee8983ce4ebbdef56e1413dc2, type: 2}
 --- !u!114 &325500133647266585
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,8 +3,8 @@ using KBCore.Refs;
 using UnityEngine;
 
 public class PlayerControllerComponent : MonoBehaviour {
-    [SerializeField, Self] private readonly Rigidbody rbBody;
-    [SerializeField, Anywhere] private readonly InputReader input;
+    [SerializeField, Self] private Player player;
+    [SerializeField] private InputReader input;
 
     public Vector3 Movement { get; private set; }
 
