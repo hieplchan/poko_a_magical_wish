@@ -645,7 +645,9 @@ MA0053.public_class_should_be_sealed = false
 
 # My setting
 dotnet_diagnostic.UNT0013.severity = none
+
 dotnet_diagnostic.IDE0010.severity = none
+dotnet_diagnostic.IDE0021.severity = none
 dotnet_diagnostic.IDE0022.severity = none
 dotnet_diagnostic.IDE0052.severity = none
 
