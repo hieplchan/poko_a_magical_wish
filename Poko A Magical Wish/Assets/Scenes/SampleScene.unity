@@ -531,6 +531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabCharacterMain
       objectReference: {fileID: 0}
+    - target: {fileID: 2241546197070022900, guid: d7f7e2e6ae8d20049aad8fab6e2d23bb, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: c0a787d3aeea7ac46afa7c2c989dd07c, type: 2}
     - target: {fileID: 9164526225152350612, guid: d7f7e2e6ae8d20049aad8fab6e2d23bb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
