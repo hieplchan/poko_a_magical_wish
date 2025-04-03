@@ -1,9 +1,9 @@
 using UnityEngine;
 
 public abstract class PlayerBaseState : IState {
-    protected float CrossFadeDuration = 0.1f;
     protected Player _player;
 
+    protected float CrossFadeDuration = 0.1f;
     protected PlayerControllerComponent _controller => _player.ControllerComp;
     protected Animator _animator => _player.AnimatorComp;
 
@@ -26,5 +26,4 @@ public abstract class PlayerBaseState : IState {
     public virtual void OnExit() {
         //noop
     }
-
 }
