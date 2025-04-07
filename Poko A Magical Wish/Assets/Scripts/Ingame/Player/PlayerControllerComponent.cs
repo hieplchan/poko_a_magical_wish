@@ -47,10 +47,15 @@ public partial class PlayerControllerComponent : MonoBehaviour {
         var adjustedDirection = Quaternion.AngleAxis(_mainCameraTransform.eulerAngles.y, Vector3.up) * Movement;
 
         if (adjustedDirection.magnitude > 0f) {
+            HandleRoration(adjustedDirection);
             HandleHorizontalMovement(adjustedDirection);
         } else {
             _rb.velocity = new Vector3(0f, _rb.velocity.y, 0f);
         }
+    }
+
+    private void HandleRoration(Vector3 adjustedDirection) {
+        _rb.transform.LookAt(transform.position + adjustedDirection);
     }
 
     private void HandleHorizontalMovement(Vector3 adjustedDirection) {
