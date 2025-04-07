@@ -3,7 +3,7 @@ public sealed class LocomotionState : PlayerBaseState {
     }
 
     public override void OnEnter() {
-        MLog.Debug("LocomotionState", $"OnEnter");
+        // MLog.Debug("LocomotionState", $"OnEnter");
         _animator.CrossFadeInFixedTime(PlayerAnimHash.Locomotion, CrossFadeDuration);
     }
 
