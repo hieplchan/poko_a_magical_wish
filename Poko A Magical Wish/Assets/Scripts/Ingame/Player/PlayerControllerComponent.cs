@@ -61,7 +61,7 @@ public partial class PlayerControllerComponent : MonoBehaviour {
     private void HandleHorizontalMovement(Vector3 adjustedDirection) {
         float speed = _walkSpeed;
 
-        var velocity = speed * Time.fixedDeltaTime * adjustedDirection;
+        var velocity = speed * Time.fixedDeltaTime * adjustedDirection.normalized;
         _rb.velocity = new Vector3(velocity.x, _rb.velocity.y, velocity.z);
     }
 
